@@ -7,18 +7,18 @@ The ruby cheers exercise (see: margaretclinard/cheers-pt1), this time 3 weeks in
 
 ### Help Usage
 
-Run the program by running `./cheers.rb`
+Run the program by running `./cheers`
 
 If there was no name input, the program would instead print:
 
 > I'd cheer for you, if only I knew who you were :(
 
-> Try again with `./cheers.rb [Name] [MM/DD Birthday]`
+> Try again with `./cheers [Name] [MM/DD Birthday]`
 
 
 ### Regular Usage
 
-Run the program by running `./cheers.rb Abby 08/25`
+Run the program by running `./cheers Abby 08/25`
 
 The first argument is the user's name. The second argument is the user's
 birthday.
@@ -55,7 +55,7 @@ say:
 
 ## Specifications, for interactive version of cheers
 
-Start the program by running `./cheers.rb`
+Start the program by running `./cheers`
 
 The program should ask:
 
