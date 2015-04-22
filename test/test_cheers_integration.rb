@@ -70,7 +70,7 @@ EOS
     assert_equal expected, output
   end
 
-  def test_too_many_arguments
+  def test_more_than_two_arguments
     output = `./cheers Abby Eliza 08/25`
     expected = <<EOS
 I'd cheer for you, if only I knew who you were :(
@@ -89,7 +89,6 @@ EOS
   end
 
   def test_two_valid_arguments
-    skip
     output = `./cheers Abby 08/25`
     expected = <<EOS
 Give me an... A
@@ -98,21 +97,26 @@ Give me a... B
 Give me a... Y
 Abby’s just GRAND!
 
-Awesome! Your birthday is in 127 days! Happy Birthday in advance!
+Awesome! Your birthday is in 125 days! Happy Birthday in advance!
 EOS
   assert_equal expected, output
   end
 
-  def test_one_valid_one_invalid_argument
-    skip
+  def test_date_argument_should_not_have_year
     output = `./cheers Abby 08/25/15`
     expected = <<EOS
-Try again with `./cheers [Name] [MM/DD Birthday]`
+Give me an... A
+Give me a... B
+Give me a... B
+Give me a... Y
+Abby’s just GRAND!
+
+I would wish you a Happy Birthday, if I knew when that was!
 EOS
   assert_equal expected, output
   end
 
-  def test_one_invalid_one_valid_argument
+  def test_name_invalid_date_valid_argument
     output = `./cheers 1234 08/25`
     expected = <<EOS
 I'd cheer for you, if only I knew who you were :(
@@ -140,7 +144,6 @@ EOS
   end
 
   def test_valid_month_arguments
-    skip
     output = `./cheers Abby 8/25`
     expected = <<EOS
 Give me an... A
@@ -149,13 +152,12 @@ Give me a... B
 Give me a... Y
 Abby’s just GRAND!
 
-Awesome! Your birthday is in 127 days! Happy Birthday in advance!
+Awesome! Your birthday is in 125 days! Happy Birthday in advance!
 EOS
   assert_equal expected, output
   end
 
   def test_invalid_month_arguments
-    skip
     output = `./cheers Abby 25/08`
     expected = <<EOS
 Give me an... A

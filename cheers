@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+require 'date'
 
 def exit_with_usage_instructions
   puts <<EOS
@@ -21,4 +22,28 @@ cheerable_name.each_char do |char|
 end
 puts "#{original_name}’s just GRAND!"
 puts ""
-puts "I would wish you a Happy Birthday, if I knew when that was!"
+
+def print_birthday_error
+  puts "I would wish you a Happy Birthday, if I knew when that was!"
+end
+
+def get_bday_count(date)
+  birthday = Date.parse(date)
+  today = Date.today
+  count = (birthday - today) % 365
+  count.to_i
+end
+
+birthday = ARGV[1]
+
+if birthday.nil? || birthday.length > 5
+  print_birthday_error
+else
+  begin
+    count = get_bday_count(birthday)
+    puts "Awesome! Your birthday is in #{count} days! Happy Birthday in advance!"
+  rescue
+    print_birthday_error
+  end
+end
+
