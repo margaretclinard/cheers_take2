@@ -18,7 +18,7 @@ Give me an... A
 Give me a... B
 Give me a... B
 Give me a... Y
-ABBY's just GRAND!
+Abby’s just GRAND!
 
 I would wish you a Happy Birthday, if I knew when that was!
 EOS
@@ -26,7 +26,6 @@ EOS
   end
 
   def test_one_valid_argument_of_name_with_hyphens
-    skip
     output = `./cheers Abby-Anne`
     expected = <<EOS
 Give me an... A
@@ -45,7 +44,6 @@ EOS
   end
 
   def test_one_valid_argument_of_name_with_space
-    skip
     output = `./cheers "Abby Anne"`
     expected = <<EOS
 Give me an... A
@@ -98,7 +96,6 @@ Give me an... A
 Give me a... B
 Give me a... B
 Give me a... Y
-
 Abby’s just GRAND!
 
 Awesome! Your birthday is in 127 days! Happy Birthday in advance!
@@ -116,7 +113,7 @@ EOS
   end
 
   def test_one_invalid_one_valid_argument
-    output = `./cheers 1Abby 08/25`
+    output = `./cheers 1234 08/25`
     expected = <<EOS
 I'd cheer for you, if only I knew who you were :(
 Try again with `./cheers [Name] [MM/DD Birthday]`
@@ -150,7 +147,6 @@ Give me an... A
 Give me a... B
 Give me a... B
 Give me a... Y
-
 Abby’s just GRAND!
 
 Awesome! Your birthday is in 127 days! Happy Birthday in advance!
@@ -166,7 +162,6 @@ Give me an... A
 Give me a... B
 Give me a... B
 Give me a... Y
-
 Abby’s just GRAND!
 
 I would wish you a Happy Birthday, if I knew when that was!
